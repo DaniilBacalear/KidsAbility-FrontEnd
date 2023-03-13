@@ -10,7 +10,7 @@ export default function Login() {
   // include check for valid email with @ character
   function validateForm() {
     var validate = require("react-email-validator")
-    return email.length > 0 && validate(email) && password.length > 0;
+    validate(email) && password.length > 0;
   }
 
   function handleSubmit(event) {
