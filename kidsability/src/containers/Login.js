@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "../styling/Login.css";
+import { validate } from 'react-email-validator';
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -9,8 +11,7 @@ export default function Login() {
 
   // include check for valid email with @ character
   function validateForm() {
-    var validate = require("react-email-validator")
-    validate(email) && password.length > 0;
+    return validate(email) && password.length > 0;
   }
 
   function handleSubmit(event) {
