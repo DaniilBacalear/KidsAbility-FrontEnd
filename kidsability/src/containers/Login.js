@@ -7,8 +7,10 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // include check for valid email with @ character
   function validateForm() {
-    return email.length > 0 && password.length > 0;
+    var validate = require("react-email-validator")
+    return email.length > 0 && validate(email) && password.length > 0;
   }
 
   function handleSubmit(event) {
